@@ -1,15 +1,14 @@
 {
   "name": "scuffedact-native",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "It's like react native but scuffed",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-native",
+    "test": "echo \"Error: lmao no tests for u, get rekt\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "metro": "^0.78.0"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-native": "link:react-native"
   }
 }

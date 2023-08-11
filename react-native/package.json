@@ -1,0 +1,8 @@
+{
+  "name": "react-native",
+  "description": "Actually, a sneaky evil imposter version of react-native! 😱",
+  "bin": "./cli.mjs",
+  "dependencies": {
+    "esbuild": "^0.19.0"
+  }
+}
