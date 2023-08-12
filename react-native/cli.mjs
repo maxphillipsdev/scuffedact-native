@@ -44,9 +44,11 @@ stdin.on("data", async (key) => {
       console.log("REEEEEEEEEEEEEEEloading");
       await ctx.rebuild();
       break;
+    case "\u0003":
     case "q":
       console.log("Lol bye");
-      ctx.cancel();
+      process.exit();
+      break;
     default:
       break;
   }
