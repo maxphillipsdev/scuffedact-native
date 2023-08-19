@@ -6,15 +6,16 @@ var childHostContext = {};
 
 /** @type {Reconciler.HostConfig} */
 const hostConfig = {
-  getRootHostContext: () => console.log("getRootHostContext"),
+  getRootHostContext: () => rootHostContext,
+  getChildHostContext: () => childHostContext,
   prepareForCommit: () => console.log("prepareForCommit"),
   resetAfterCommit: () => console.log("resetAfterCommit"),
-  getChildHostContext: () => console.log("getChildHostContext"),
   shouldSetTextContent: () => {
     console.log("shouldSetTextContent");
     return false;
   },
-  createTextInstance: () => console.log("createTextInstance"),
+  createTextInstance: () =>
+    ScuffedUIManager.createTextInstance("Hello from JS land!"),
   createInstance: () => console.log("createInstance"),
   appendInitialChild: () => console.log("appendInitialChild"),
   finalizeInitialChildren: () => {

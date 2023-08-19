@@ -9,6 +9,7 @@ import Foundation
 import JavaScriptCore
 
 @objc protocol ScuffedUIManagerExport: JSExport {
+    func createTextInstance(_ text: String) -> Void
 }
 
 @objc class ScuffedRCTUIManager: NSObject, ScuffedUIManagerExport {
@@ -17,7 +18,7 @@ import JavaScriptCore
                             forKeyedSubscript: forKeyedSubscript as (NSCopying & NSObjectProtocol))
     }
     
-    func createTextInstance() {
-        
+    func createTextInstance(_ text: String) {
+        print("[NATIVE]: ", text)
     }
 }

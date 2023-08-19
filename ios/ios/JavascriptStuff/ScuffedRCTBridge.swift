@@ -37,6 +37,6 @@ class ScuffedRCTBridge: NSObject {
         TimerJS.registerInto(jsContext: context)
         ConsoleJS.registerInto(jsContext: context)
         
-        
+        ScuffedRCTUIManager.registerInto(jsContext: context)
     }
 }
