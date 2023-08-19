@@ -17,6 +17,7 @@
 		502D201B2A9080760010FB04 /* TimerJS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D201A2A9080760010FB04 /* TimerJS.swift */; };
 		502D201E2A908E730010FB04 /* ScuffedRCTBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D201D2A908E730010FB04 /* ScuffedRCTBridge.swift */; };
 		502D20202A908E820010FB04 /* ScuffedRCTUIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D201F2A908E820010FB04 /* ScuffedRCTUIManager.swift */; };
+		502D20222A90A34E0010FB04 /* ConsoleJS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502D20212A90A34E0010FB04 /* ConsoleJS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		502D201A2A9080760010FB04 /* TimerJS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerJS.swift; sourceTree = "<group>"; };
 		502D201D2A908E730010FB04 /* ScuffedRCTBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScuffedRCTBridge.swift; sourceTree = "<group>"; };
 		502D201F2A908E820010FB04 /* ScuffedRCTUIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScuffedRCTUIManager.swift; sourceTree = "<group>"; };
+		502D20212A90A34E0010FB04 /* ConsoleJS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleJS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				502D201A2A9080760010FB04 /* TimerJS.swift */,
 				502D201D2A908E730010FB04 /* ScuffedRCTBridge.swift */,
 				502D201F2A908E820010FB04 /* ScuffedRCTUIManager.swift */,
+				502D20212A90A34E0010FB04 /* ConsoleJS.swift */,
 			);
 			path = JavascriptStuff;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				502D201B2A9080760010FB04 /* TimerJS.swift in Sources */,
 				502D201E2A908E730010FB04 /* ScuffedRCTBridge.swift in Sources */,
 				502D20202A908E820010FB04 /* ScuffedRCTUIManager.swift in Sources */,
+				502D20222A90A34E0010FB04 /* ConsoleJS.swift in Sources */,
 				502D20072A907FE50010FB04 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

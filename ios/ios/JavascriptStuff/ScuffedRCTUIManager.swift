@@ -6,3 +6,18 @@
 //
 
 import Foundation
+import JavaScriptCore
+
+@objc protocol ScuffedUIManagerExport: JSExport {
+}
+
+@objc class ScuffedRCTUIManager: NSObject, ScuffedUIManagerExport {
+    static func registerInto(jsContext: JSContext, forKeyedSubscript: String = "ScuffedUIManager") {
+        jsContext.setObject(ScuffedRCTUIManager(),
+                            forKeyedSubscript: forKeyedSubscript as (NSCopying & NSObjectProtocol))
+    }
+    
+    func createTextInstance() {
+        
+    }
+}
