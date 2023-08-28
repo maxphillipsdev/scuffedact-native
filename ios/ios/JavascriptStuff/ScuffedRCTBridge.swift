@@ -8,22 +8,24 @@
 import Foundation
 import JavaScriptCore
 
-class ScuffedRCTBridge: NSObject {
+class ScuffedRCTBridge {
     
-    var context: JSContext;
-    
-    override init() {
+    static var context: JSContext?;
+    static var rootViewController: ViewController?;
+    init(_ viewController: ViewController) {
         do {
             // create javascript land
-            self.context = JSContext()
-            
-            ScuffedRCTBridge.registerBridgingModules(context: self.context)
+            ScuffedRCTBridge.rootViewController = viewController
+            ScuffedRCTBridge.context = JSContext()
+            ScuffedRCTBridge.registerBridgingModules()
             
             // Load the JS bundle
             if let path = Bundle.main.path(forResource: "index", ofType: "bundle") {
-                let res = self.context.evaluateScript(try String(contentsOfFile: path, encoding: .utf8))
-                if let jsError = res?.context.exception {
-                    print("[JAVASCRIPT LAND]: ", jsError)
+                if ScuffedRCTBridge.context != nil {
+                    let res = ScuffedRCTBridge.context?.evaluateScript(try String(contentsOfFile: path, encoding: .utf8))
+                    if let jsError = res?.context.exception {
+                        print("[JAVASCRIPT LAND]: ", jsError)
+                    }
                 }
             } else {
                 print("Failed to load bundle")
@@ -33,10 +35,11 @@ class ScuffedRCTBridge: NSObject {
         }
     }
     
-    static func registerBridgingModules(context: JSContext) -> Void {
-        TimerJS.registerInto(jsContext: context)
-        ConsoleJS.registerInto(jsContext: context)
-        
-        ScuffedRCTUIManager.registerInto(jsContext: context)
+    static func registerBridgingModules() -> Void {
+        if let context = ScuffedRCTBridge.context {
+            TimerJS.registerInto(jsContext: context)
+            ConsoleJS.registerInto(jsContext: context)
+            ScuffedRCTUIManager.registerInto(jsContext: context)
+        }
     }
 }

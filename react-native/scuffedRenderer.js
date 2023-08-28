@@ -14,8 +14,7 @@ const hostConfig = {
     console.log("shouldSetTextContent");
     return false;
   },
-  createTextInstance: () =>
-    ScuffedUIManager.createTextInstance("Hello from JS land!"),
+  createTextInstance: (text) => ScuffedUIManager.createTextInstance(text),
   createInstance: () => console.log("createInstance"),
   appendInitialChild: () => console.log("appendInitialChild"),
   finalizeInitialChildren: () => {

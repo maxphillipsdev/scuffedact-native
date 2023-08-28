@@ -19,7 +19,7 @@ console.log(`\x1b[31m
 
 
               Welcome to ScuffedMetro v1.0.0
-          Slow - Shit - Possibly just esbuild`);
+          Slow - Shit - Completely unstable`);
 
 const ctx = await esbuild.context({
   entryPoints: ["./index.js"],
