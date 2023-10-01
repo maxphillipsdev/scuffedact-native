@@ -15,7 +15,9 @@ const hostConfig = {
     return false;
   },
   createTextInstance: (text) => ScuffedUIManager.createTextInstance(text),
-  createInstance: () => console.log("createInstance"),
+  // createInstance: (type, props) =>
+  //   console.log(`createInstance ${type} ${JSON.stringify(props)}`),
+  createInstance: (type, props) => ScuffedUIManager.createInstance(type, props),
   appendInitialChild: () => console.log("appendInitialChild"),
   finalizeInitialChildren: () => {
     console.log("finalizeInitialChildren");

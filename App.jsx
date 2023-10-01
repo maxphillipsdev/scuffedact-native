@@ -10,8 +10,14 @@ import { Text, View } from "react-native";
 
 function App() {
   return (
-    <View>
-      <Text>Hello scuffedact!</Text>
+    <View
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text style={{ color: "black" }}>Hello scuffedact!</Text>
     </View>
   );
 }
