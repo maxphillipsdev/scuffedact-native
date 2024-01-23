@@ -19,6 +19,20 @@ a blog post on it at some point, in which case I'll link that here.
 - Hot reload with websockets
 - Android _mayyyybeee, but probably not_
 
+## How it was built
+
+I started with a plain react-native project and then uninstalled the core react-native package and some supporting packages.
+From there I worked backwards from `AppRegistry.registerComponent()`, and implemented a system to load the JS bundle from
+the native app's assets and run it in JavaScript Core. The project also includes some bindings for setting up side effects
+(like JS timers) which are needed to run React.
+
+To support `<Text>` components and render content to the screen, I used [react-reconciler](https://www.npmjs.com/package/react-reconciler)
+to write a React Host Config. This implements the essential imperative function calls that React usually makes to `react-dom`,
+and instead assigns them to native functions that are bound through the JSCore API.
+
+This means that when a React element with a type of `Text` comes through, the native function is called and understands that it should
+draw a native Text UIView to the screen.
+
 ## Usage
 
 ```bash
@@ -48,15 +62,3 @@ To run tests, run the following command
 ```bash
 pnpm run test
 ```
-
-## Optimizations
-
-I left out android, native modules, native components, turbo modules, fabric components, JNI, Yoga, hermes, and about 99% of the expected components.
-
-## Acknowledgements
-
-uhhhh i'd like to thank the academy, my mum, uhhh my cat...
-
-## Used By
-
-No one I hope lol
